@@ -30,15 +30,13 @@ a(1:3)
 a + b
 
 % concatenate with square brackets
-
 [a b]
 
+% How to define a range?
 % xs = start:increment:end
-
-xs = 0:1:10
+xs = 0:1:10o
 
 % apostrophe transposes
-
 xs'
 
 % QUESTION: How to multiply?
@@ -50,18 +48,17 @@ zeros(n) % = zeros(n,n)
 zeros(3,4) % = zeros([3 4])
 
 % Similar for ones
-
 arr = ones(3,4)
 
+% Get size of array
 size(arr)
 length(arr)
 
-% Also, mathematical functions
-
+% Also, mathematical functions exist.
 r = randperm(15,5);
 
 % They're kind of weird.
-
+% Return depends on the left side of the equal sign?
 maxR = max(r);
 [maxR, location] = max(r);
 
@@ -95,11 +92,11 @@ t = 0:1/freq:(length(y) - 1)/freq;
 plot(t,y);
 
 %% fast fourier transforms!
-% 
+
 fsampling = 100; %sampling rate
 t = 0:1/fsampling:2*pi;
 f1 = 20; %frequency
-x = cos(2*pi*t*f1); 
+x = cos(2*pi*t*f1);
 L = length(x);
 
 X = fft(x);
@@ -116,12 +113,18 @@ xlim([0,2*pi]);
 
 subplot(3,1,2)
 plot(omega, abs(X));
-title('signal X(\omega), real')
+title('signal X(\omega), magnitude')
 
 subplot(3,1,3)
 plot(omega, angle(X))
+title('signal X(\omega), phase')
+% hey! why is this a complex number?
 
 % what else can you throw into fft? Why do they look different?
+% try a sin wave, a cos wave, a square wave. Try that audio file!
+% what happens when you change the sampling rate?
+
+% what happens if you're above or below the nyquist frequency?
 
 %% Bonus: Yes, you can use c-style string formatting with Matlab.
 % Don't worry about this if you're not familiar with c-style string formatting
