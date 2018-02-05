@@ -34,7 +34,7 @@ a + b
 
 % How to define a range?
 % xs = start:increment:end
-xs = 0:1:10o
+xs = 0:1:10
 
 % apostrophe transposes
 xs'
